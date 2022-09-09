@@ -2,6 +2,7 @@ package api
 
 import (
 	"main/db"
+	"main/interceptor"
 	"main/model"
 	"time"
 
@@ -12,7 +13,7 @@ import (
 func SetupAuthenAPI(router *gin.Engine) {
 	authenAPI := router.Group("api/v2")
 	{
-		authenAPI.POST("/login", login)
+		authenAPI.POST("/login", login) 
 		authenAPI.POST("/register", register)
 	}
 }
@@ -28,7 +29,8 @@ func login(c *gin.Context) {
 		} else if checkPasswordHash(user.Password, queryUser.Password) == false {
 			c.JSON(200, gin.H{"result": "nok", "error": "invalid password"})
 		} else {
-			c.JSON(200, gin.H{"result": "ok", "data": user})
+			token := interceptor.JwtSign(queryUser)
+			c.JSON(200, gin.H{"result": "ok", "token": token})
 		}
 	} else {
 		c.JSON(401, gin.H{"status": "unable to bind data"})
