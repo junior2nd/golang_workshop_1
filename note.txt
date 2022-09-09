@@ -1,0 +1,7 @@
+------ อัปขึ้น Git ------
+git add . && git commit -m "deployment on heroku again" && git push
+------ หลังจากนั้น ไป Deploy ที่ Heroku ------
+
+เช็ค Log Heroku
+
+heroku logs --tail --app cmgostockjr

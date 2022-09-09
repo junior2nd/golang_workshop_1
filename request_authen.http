@@ -23,7 +23,7 @@ POST https://cmgostockjr.herokuapp.com/api/v2/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "username" : "jr",
+    "username" : "jr88",
     "password" : "1234" 
 } 
 

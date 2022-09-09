@@ -68,3 +68,29 @@ Content-Type: image/png
 
 < ./test.jpg
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+#### heroku ####
+
+### create
+POST https://cmgostockjr.herokuapp.com/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjI3MTU4MDAsImlkIjozLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoianI4OCJ9.T_uVNJAzlbJS8R6NUaIkSb3IHXYH9PxGhJ38ng9kYGw
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+React Test
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+300
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+180
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="test.jpg"
+Content-Type: image/png
+
+< ./test.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

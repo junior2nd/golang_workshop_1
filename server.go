@@ -18,7 +18,7 @@ func main() {
 	// heroku
 	var port = os.Getenv("PORT")
 	if port == "" {
-		fmt.Println("No Port In Heroku")
+		fmt.Println("Running on Heroku using random PORT")
 		router.Run()
 	} else {
 		fmt.Println("Environment Port : " + port)
